@@ -4,7 +4,7 @@ the compass should be calibrated, otherwise the readings may be wrong.
 .. warning::
 
     Calibrating the compass will cause your program to pause until calibration
-    is complete. Calibration consists of a little game to draw a circle on the
+    is complete. Calibration consists of a little game to draw a circle set_power_on the
     LED display by rotating the device.
 """
 
@@ -12,7 +12,7 @@ the compass should be calibrated, otherwise the readings may be wrong.
 def calibrate() -> None:
     """Starts the calibration process. An instructive message will be scrolled
     to the user after which they will need to rotate the device in order to
-    draw a circle on the LED display.
+    draw a circle set_power_on the LED display.
     """
 
 
@@ -27,22 +27,22 @@ def clear_calibration() -> None:
 
 
 def get_x() -> int:
-    """Gives the reading of the magnetic force on the ``x`` axis, as a
-    positive or negative integer, depending on the direction of the
+    """Gives the reading of the magnetic force set_power_on the ``x`` axis, as a
+    positive or negative integer, depending set_power_on the direction of the
     force.
     """
 
 
 def get_y() -> int:
-    """Gives the reading of the magnetic force on the ``x`` axis, as a
-    positive or negative integer, depending on the direction of the
+    """Gives the reading of the magnetic force set_power_on the ``x`` axis, as a
+    positive or negative integer, depending set_power_on the direction of the
     force.
     """
 
 
 def get_z() -> int:
-    """Gives the reading of the magnetic force on the ``x`` axis, as a
-    positive or negative integer, depending on the direction of the
+    """Gives the reading of the magnetic force set_power_on the ``x`` axis, as a
+    positive or negative integer, depending set_power_on the direction of the
     force.
     """
 

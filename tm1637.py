@@ -1,117 +1,128 @@
 from microbit import *
+from enum import *
 
-TM1637_CMD1 = (64)  # 0x40 data command
-TM1637_CMD2 = (192) # 0xC0 address command
-TM1637_CMD3 = (128) # 0x80 display control command
+TM1637_CMD1 = 64  # 0x40 data command
+TM1637_CMD2 = 192  # 0xC0 address command
+TM1637_CMD3 = 128  # 0x80 display control command
 
-_SEGMENTS = (0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71)
+_SEGMENTS = (0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F, 0x77, 0x7C, 0x39, 0x5E, 0x79, 0x71)
 
-class TM1637():
-    def __init__(self, clk, dio, intensity=7, number=4):
-        self.clk = clk
-        self.dio = dio
 
-        self._intensity = intensity%8
-        self._LED = number
-        self._ON = 8
-        self.dbuf = [0, 0, 0, 0]
+class TM1637(object):
+    def __init__(self, RJ_pin, intensity=7, number=4):
+        if RJ_pin == J1:
+            self.__clk = pin1
+            self.__dio = pin8
+        elif RJ_pin == J2:
+            self.__clk = pin2
+            self.__dio = pin12
+        elif RJ_pin == J3:
+            self.__clk = pin13
+            self.__dio = pin14
+        elif RJ_pin == J4:
+            self.__clk = pin15
+            self.__dio = pin16
 
-        self.clk.write_digital(0)
-        self.dio.write_digital(0)
+        self.__intensity = intensity % 8
+        self.__LED = number
+        self.__ON = 8
+        self.__buf_d = [0, 0, 0, 0]
 
-        self.clear()
+        self.__clk.write_digital(0)
+        self.__dio.write_digital(0)
 
-    def _start(self):
-        self.dio.write_digital(0)
-        self.clk.write_digital(0)
+        self.set_clear()
 
-    def _stop(self):
-        self.dio.write_digital(0)
-        self.clk.write_digital(1)
-        self.dio.write_digital(1)
+    def __start(self):
+        self.__dio.write_digital(0)
+        self.__clk.write_digital(0)
 
-    def _write_data_cmd(self):
-        self._start()
-        self._write_byte(TM1637_CMD1)
-        self._stop()
+    def __stop(self):
+        self.__dio.write_digital(0)
+        self.__clk.write_digital(1)
+        self.__dio.write_digital(1)
 
-    def _write_dsp_ctrl(self):
-        self._start()
-        self._write_byte(TM1637_CMD3 | self._ON | self._intensity)
-        self._stop()
+    def __write_data_cmd(self):
+        self.__start()
+        self.__write_byte(TM1637_CMD1)
+        self.__stop()
 
-    def _write_byte(self, b):
+    def __write_dsp_ctrl(self):
+        self.__start()
+        self.__write_byte(TM1637_CMD3 | self.__ON | self.__intensity)
+        self.__stop()
+
+    def __write_byte(self, b):
         for i in range(8):
-            self.dio.write_digital((b >> i) & 1)
-            self.clk.write_digital(1)
-            self.clk.write_digital(0)
-        self.clk.write_digital(1)
-        self.clk.write_digital(0)
+            self.__dio.write_digital((b >> i) & 1)
+            self.__clk.write_digital(1)
+            self.__clk.write_digital(0)
+        self.__clk.write_digital(1)
+        self.__clk.write_digital(0)
 
-    def on(self):
-        self._ON = 8
-        self._write_data_cmd()
-        self._write_dsp_ctrl()
+    def __dat(self, bit, dat):
+        self.__write_data_cmd()
+        self.__start()
+        self.__write_byte(TM1637_CMD2 | (bit % self.__LED))
+        self.__write_byte(dat)
+        self.__stop()
+        self.__write_dsp_ctrl()
 
-    def off(self):
-        self._ON = 0
-        self._write_data_cmd()
-        self._write_dsp_ctrl()
+    def set_power_on(self):
+        self.__ON = 8
+        self.__write_data_cmd()
+        self.__write_dsp_ctrl()
 
-    def intensity(self, val=None):
+    def set_power_off(self):
+        self.__ON = 0
+        self.__write_data_cmd()
+        self.__write_dsp_ctrl()
+
+    def set_intensity(self, val=None):
         if val is None:
-            return self._intensity
+            return self.__intensity
         val = max(0, min(val, 8))
         if val == 0:
-            self.off()
+            self.set_power_off()
         else:
-            self._ON = 8
-            self._intensity = val-1
-            self._write_data_cmd()
-            self._write_dsp_ctrl()
+            self.__ON = 8
+            self.__intensity = val - 1
+            self.__write_data_cmd()
+            self.__write_dsp_ctrl()
 
-    def _dat(self, bit, dat):
-        self._write_data_cmd()
-        self._start()
-        self._write_byte(TM1637_CMD2 | (bit%self._LED))
-        self._write_byte(dat)
-        self._stop()
-        self._write_dsp_ctrl()
+    def set_clear(self):
+        self.__dat(0, 0)
+        self.__dat(1, 0)
+        self.__dat(2, 0)
+        self.__dat(3, 0)
+        self.__buf_d = [0, 0, 0, 0]
 
-    def clear(self):
-        self._dat(0, 0)
-        self._dat(1, 0)
-        self._dat(2, 0)
-        self._dat(3, 0)
-        self.dbuf = [0, 0, 0, 0]
+    def set_show_bit(self, num, bit=0):
+        self.__buf_d[bit % self.__LED] = _SEGMENTS[num % 16]
+        self.__dat(bit, _SEGMENTS[num % 16])
 
-    def showbit(self, num, bit = 0):
-        self.dbuf[bit%self._LED] = _SEGMENTS[num%16]
-        self._dat(bit, _SEGMENTS[num%16])
-
-    def showDP(self, bit = 1, show = True):
-        bit = bit%self._LED
+    def set_show_DP(self, bit=1, show=True):
+        bit = bit % self.__LED
         if show:
-            self._dat(bit, self.dbuf[bit] | 0x80)
+            self.__dat(bit, self.__buf_d[bit] | 0x80)
         else:
-            self._dat(bit, self.dbuf[bit] & 0x7F)
+            self.__dat(bit, self.__buf_d[bit] & 0x7F)
 
-    def shownum(self, num):
+    def set_show_num(self, num):
         if num < 0:
-            self._dat(0, 0x40)   # '-'
+            self.__dat(0, 0x40)  # '-'
             num = -num
         else:
-            self.showbit((num // 1000) % 10)
-        self.showbit(num % 10, 3)
-        self.showbit((num // 10) % 10, 2)
-        self.showbit((num // 100) % 10, 1)
+            self.set_show_bit((num // 1000) % 10)
+        self.set_show_bit(num % 10, 3)
+        self.set_show_bit((num // 10) % 10, 2)
+        self.set_show_bit((num // 100) % 10, 1)
 
-    def showhex(self, num):
-        if num < 0:
-            self._dat(0, 0x40)   # '-'
-            num = -num
-        else:
-            self.showbit((num >> 12) % 16)
-        self.showbit(num % 16, 3)
-        self.showbit((num >> 4) % 16, 2)
-        self.showbit((num >> 8) % 16, 1)
+
+if __name__ == '__main__':
+    tm = TM1637(J2)
+
+    n = 0
+    while 1:
+        tm.set_show_num(n)
+        n += 1

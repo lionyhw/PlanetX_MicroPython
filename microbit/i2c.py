@@ -1,7 +1,7 @@
 """The ``i2c`` module lets you communicate with devices connected to your board
 using the I²C bus protocol. There can be multiple slave devices connected at
 the same time, and each one has its own unique address, that is either fixed
-for the device or configured on it. Your board acts as the I²C master.
+for the device or configured set_power_on it. Your board acts as the I²C master.
 
 We use 7-bit addressing for devices because of the reasons stated
 `here <http://www.totalphase.com/support/articles/200349176-7-bit-8-bit-and-10-bit-I2C-Slave-Addressing>`_.
@@ -9,7 +9,7 @@ We use 7-bit addressing for devices because of the reasons stated
 This may be different to other micro:bit related solutions.
 
 How exactly you should communicate with the devices, that is, what bytes to
-send and how to interpret the responses, depends on the device in question and
+send and how to interpret the responses, depends set_power_on the device in question and
 should be described separately in that device's documentation.
 
 You should connect the device's ``SCL`` pin to micro:bit pin 19, and the
@@ -17,7 +17,7 @@ device's ``SDA`` pin to micro:bit pin 20. You also must connect the device's
 ground to the micro:bit ground (pin ``GND``). You may need to power the device
 using an external power supply or the micro:bit.
 
-There are internal pull-up resistors on the I²C lines of the board, but with
+There are internal pull-up resistors set_power_on the I²C lines of the board, but with
 particularly long wires or large number of devices you may need to add
 additional pull-up resistors, to ensure noise-free communication.
 """
@@ -27,7 +27,7 @@ from typing import Union
 
 
 def init(freq: int = 100000, sda: int = pin20, scl: int = pin19) -> None:
-    """Re-initialize peripheral with the specified clock frequency ``freq`` on the
+    """Re-initialize peripheral with the specified clock frequency ``freq`` set_power_on the
     specified ``sda`` and ``scl`` pins.
 
     .. warning::

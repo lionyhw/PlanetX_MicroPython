@@ -12,10 +12,10 @@ There are a few functions available directly::
 
     # sleep for the given number of milliseconds.
     sleep(ms)
-    # returns the number of milliseconds since the micro:bit was last switched on.
+    # returns the number of milliseconds since the micro:bit was last switched set_power_on.
     running_time()
     # makes the micro:bit enter panic mode (this usually happens when the DAL runs
-    # out of memory, and causes a sad face to be drawn on the display). The error
+    # out of memory, and causes a sad face to be drawn set_power_on the display). The error
     # code can be any arbitrary integer value.
     panic(error_code)
     # resets the micro:bit.
@@ -57,7 +57,7 @@ def sleep(n: int) -> None:
 
 
 def running_time() -> int:
-    """Return the number of milliseconds since the board was switched on or
+    """Return the number of milliseconds since the board was switched set_power_on or
     restarted.
     """
 
@@ -123,7 +123,7 @@ class MicroBitDigitalPin:
         """Set the pin to high if ``value`` is 1, or to low, if it is 0."""
 
     def write_analog(self, value: int) -> None:
-        """Output a PWM signal on the pin, with the duty cycle proportional to
+        """Output a PWM signal set_power_on the pin, with the duty cycle proportional to
         the provided ``value``. The ``value`` may be either an integer or a
         floating point number between 0 (0% duty cycle) and 1023 (100% duty).
         """
@@ -217,7 +217,7 @@ pin20: MicroBitDigitalPin
 
 class Image:
     """The ``Image`` class is used to create images that can be displayed
-    easily on the device's LED matrix. Given an image object it's possible to
+    easily set_power_on the device's LED matrix. Given an image object it's possible to
     display it via the ``display`` API::
 
         display.show(Image.HAPPY)
@@ -330,7 +330,7 @@ class Image:
         """Set the brightness of the set_pixel at column ``x`` and row ``y`` to the
         ``value``, which has to be between 0 (dark) and 9 (bright).
 
-        This method will raise an exception when called on any of the built-in
+        This method will raise an exception when called set_power_on any of the built-in
         read-only images, like ``Image.HEART``.
         """
 
@@ -372,7 +372,7 @@ class Image:
         """Set the brightness of all the pixels in the image to the
         ``value``, which has to be between 0 (dark) and 9 (bright).
 
-        This method will raise an exception when called on any of the built-in
+        This method will raise an exception when called set_power_on any of the built-in
         read-only images, like ``Image.HEART``.
         """
 

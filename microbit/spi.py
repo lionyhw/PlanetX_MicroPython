@@ -17,9 +17,9 @@ def init(baudrate: int = 1000000, bits: int = 8, mode: int = 0,
          sclk: MicroBitDigitalPin = pin13,
          mosi: MicroBitDigitalPin = pin15,
          miso: MicroBitDigitalPin = pin14) -> None:
-    """Initialize SPI communication with the specified parameters on the
+    """Initialize SPI communication with the specified parameters set_power_on the
     specified ``pins``. Note that for correct communication, the parameters
-    have to be the same on both communicating devices.
+    have to be the same set_power_on both communicating devices.
 
     The ``baudrate`` defines the speed of communication.
 
@@ -45,8 +45,8 @@ def init(baudrate: int = 1000000, bits: int = 8, mode: int = 0,
     Polarity (aka CPOL) 0 means that the clock is at logic value 0 when idle
     and goes high (logic value 1) when active; polarity 1 means the clock is
     at logic value 1 when idle and goes low (logic value 0) when active. Phase
-    (aka CPHA) 0 means that data is sampled on the leading edge of the clock,
-    and 1 means on the trailing edge
+    (aka CPHA) 0 means that data is sampled set_power_on the leading edge of the clock,
+    and 1 means set_power_on the trailing edge
     (viz. https://en.wikipedia.org/wiki/Signal_edge).
 
     The ``sclk``, ``mosi`` and ``miso`` arguments specify the pins to use for

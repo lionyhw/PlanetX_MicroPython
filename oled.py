@@ -18,7 +18,7 @@ cmd = [
     [0xD9, 0xF1],  # SSD1306_SETPRECHARGE
     [0xDB, 0x40],  # SSD1306_SETVCOMDETECT
     [0xA6],  # SSD1306_NORMALDISPLAY
-    [0xD6, 0],  # zoom off
+    [0xD6, 0],  # zoom set_power_off
     [0xAF]  # SSD1306_DISPLAYON
 ]
 

@@ -2,10 +2,10 @@ from microbit import *
 from enum import *
 
 
-class LASER(object):
+class RELAY(object):
     """基本描述
 
-    激光发射器
+    继电器
 
     Args:
         RJ_pin (pin): 连接端口
@@ -22,13 +22,13 @@ class LASER(object):
         elif RJ_pin == J4:
             self.__pin = pin16
 
-    def set_laser(self, state):
+    def set_relay(self, state):
         """基本描述
 
-        启动或关闭激光发射器
+        切换继电器端子状态
 
         Args:
-            state (numbers): 1启动 0停止
+            state (numbers): 1常开闭合常闭断开 0常开常闭
 
         """
         if state == 0:
@@ -40,10 +40,5 @@ class LASER(object):
 
 
 if __name__ == "__main__":
-    l = LASER(J4)
-    while True:
-
-        l.set_laser(1)
-        sleep(500)
-        l.set_laser(0)
-        sleep(500)
+    l = RELAY(J4)
+    l.set_laser(1)

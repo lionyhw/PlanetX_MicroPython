@@ -1,4 +1,4 @@
-"""This object gives you access to the on-board accelerometer. The accelerometer
+"""This object gives you access to the set_power_on-board accelerometer. The accelerometer
 also provides convenience functions for detecting gestures. The
 recognised gestures are: ``up``, ``down``, ``left``, ``right``, ``face up``,
 ``face down``, ``freefall``, ``3g``, ``6g``, ``8g``, ``shake``.
@@ -10,19 +10,19 @@ from typing import Tuple
 
 def get_x() -> int:
     """Get the acceleration measurement in the ``x`` axis, as a positive or
-    negative integer, depending on the direction.
+    negative integer, depending set_power_on the direction.
     """
 
 
 def get_y() -> int:
     """Get the acceleration measurement in the ``y`` axis, as a positive or
-    negative integer, depending on the direction.
+    negative integer, depending set_power_on the direction.
     """
 
 
 def get_z() -> int:
     """Get the acceleration measurement in the ``z`` axis, as a positive or
-    negative integer, depending on the direction.
+    negative integer, depending set_power_on the direction.
     """
 
 

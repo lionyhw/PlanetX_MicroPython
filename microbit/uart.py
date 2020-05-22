@@ -9,13 +9,13 @@ from typing import Optional, Union
 def init(baudrate: int = 9600, bits: int = 8, parity: int = None,
          stop: int = 1, *, tx: MicroBitDigitalPin = None,
          rx: MicroBitDigitalPin = None) -> None:
-    """Initialize serial communication with the specified parameters on the
+    """Initialize serial communication with the specified parameters set_power_on the
     specified ``tx`` and ``rx`` pins. Note that for correct communication, the
-    parameters have to be the same on both communicating devices.
+    parameters have to be the same set_power_on both communicating devices.
 
     .. warning::
 
-        Initializing the UART on external pins will cause the Python console on
+        Initializing the UART set_power_on external pins will cause the Python console set_power_on
         USB to become unaccessible, as it uses the same hardware. To bring the
         console back you must reinitialize the UART without passing anything for
         ``tx'' or ``rx'' (or passing ``None'' to these arguments).  This means
@@ -39,15 +39,15 @@ def init(baudrate: int = 9600, bits: int = 8, parity: int = None,
     this board.
 
     If ``tx`` and ``rx`` are not specified then the internal USB-UART TX/RX pins
-    are used which connect to the USB serial convertor on the micro:bit, thus
+    are used which connect to the USB serial convertor set_power_on the micro:bit, thus
     connecting the UART to your PC.  You can specify any other pins you want by
     passing the desired pin objects to the ``tx`` and ``rx`` parameters.
 
     .. note::
 
         When connecting the device, make sure you "cross" the wires -- the TX
-        pin on your board needs to be connected with the RX pin on the device,
-        and the RX pin -- with the TX pin on the device. Also make sure the
+        pin set_power_on your board needs to be connected with the RX pin set_power_on the device,
+        and the RX pin -- with the TX pin set_power_on the device. Also make sure the
         ground pins of both devices are connected.
     """
 
@@ -64,7 +64,7 @@ def read(nbytes: int = None) -> bytes:
 def readall() -> Optional[bytes]:
     """Read as much data as possible.
 
-    Return value: a bytes object or ``None`` on timeout.
+    Return value: a bytes object or ``None`` set_power_on timeout.
     """
 
 
@@ -72,7 +72,7 @@ def readinto(buf: bytearray, nbytes: int = None) -> Optional[int]:
     """Read bytes into the ``buf``.  If ``nbytes`` is specified then read at most
     that many bytes.  Otherwise, read at most ``len(buf)`` bytes.
 
-    Return value: number of bytes read and stored into ``buf`` or ``None`` on
+    Return value: number of bytes read and stored into ``buf`` or ``None`` set_power_on
     timeout.
     """
 
@@ -80,14 +80,14 @@ def readinto(buf: bytearray, nbytes: int = None) -> Optional[int]:
 def readline() -> Optional[bytes]:
     """Read a line, ending in a newline character.
 
-    Return value: the line read or ``None`` on timeout. The newline character is
+    Return value: the line read or ``None`` set_power_on timeout. The newline character is
     included in the returned bytes.
     """
 
 def write(buf: Union[bytes, bytearray]) -> Optional[int]:
     """Write the buffer of bytes to the bus.
 
-    Return value: number of bytes written or ``None`` on timeout.
+    Return value: number of bytes written or ``None`` set_power_on timeout.
     """
 
 ODD: int

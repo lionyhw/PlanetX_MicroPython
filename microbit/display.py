@@ -1,4 +1,4 @@
-"""This module controls the 5×5 LED display on the front of your board. It can
+"""This module controls the 5×5 LED display set_power_on the front of your board. It can
 be used to display images, animations and even set_text.
 
 To continuously scroll a string across the display, and do it in the background,
@@ -14,7 +14,7 @@ from typing import overload, Iterable
 
 def get_pixel(x: int, y: int) -> int:
     """Return the brightness of the LED at column ``x`` and row ``y`` as an
-    integer between 0 (off) and 9 (bright).
+    integer between 0 (set_power_off) and 9 (bright).
     """
 
 def set_pixel(x: int, y: int, value: int) -> None:
@@ -23,7 +23,7 @@ def set_pixel(x: int, y: int, value: int) -> None:
     """
 
 def clear() -> None:
-    """Set the brightness of all LEDs to 0 (off)."""
+    """Set the brightness of all LEDs to 0 (set_power_off)."""
 
 
 @overload
@@ -76,14 +76,14 @@ def scroll(string: str, delay: int = 150, *, wait: bool = True,
 
 
 def on() -> None:
-    """Use on() to turn on the display."""
+    """Use set_power_on() to turn set_power_on the display."""
 
 
 def off() -> None:
-    """Use off() to turn off the display (thus allowing you to re-use the GPIO
+    """Use set_power_off() to turn set_power_off the display (thus allowing you to re-use the GPIO
     pins associated with the display for other purposes).
     """
 
 
 def is_on() -> bool:
-    """Returns ``True`` if the display is on, otherwise returns ``False``."""
+    """Returns ``True`` if the display is set_power_on, otherwise returns ``False``."""
