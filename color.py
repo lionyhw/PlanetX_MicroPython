@@ -18,12 +18,13 @@ APDS9960_GCONF4 = 0xAB
 APDS9960_AICLEAR = 0xE7
 
 
-class APDS9960(object):
+class COLOR(object):
     """基本描述
 
     APDS9960, 颜色距离手势传感器，本文件只做颜色识别使用
 
     """
+
     def __init__(self):
         i2c.init()
         self.__initmodule()
@@ -55,6 +56,9 @@ class APDS9960(object):
         __G = color_g * 100 / 255
         __B = color_b * 100 / 255
         # 取最大值
+        __maxVal = max(__R, max(__G, __B))
+        __minVal = min(__R, min(__G, __B))
+        '''
         if __R < __G and __B < __G:
             __maxVal = __G
         elif __R < __B and __G < __B:
@@ -68,7 +72,7 @@ class APDS9960(object):
             __minVal = __B
         else:
             __minVal = __R
-
+        '''
         __delta = __maxVal - __minVal
 
         if __delta <= 0:
@@ -121,7 +125,7 @@ class APDS9960(object):
 
 
 if __name__ == '__main__':
-    color = APDS9960()
+    color = COLOR()
     while True:
         print("HUE: ", color.get_hue())
         sleep(5)

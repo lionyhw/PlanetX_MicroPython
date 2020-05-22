@@ -8,7 +8,13 @@ TM1637_CMD3 = 128  # 0x80 display control command
 _SEGMENTS = (0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F, 0x77, 0x7C, 0x39, 0x5E, 0x79, 0x71)
 
 
-class TM1637(object):
+class NIXIETUBE(object):
+    """基本描述
+
+    7段4位数码管, 7-Seg LED Nixie tube
+
+    """
+
     def __init__(self, RJ_pin, intensity=7, number=4):
         if RJ_pin == J1:
             self.__clk = pin1
@@ -69,16 +75,35 @@ class TM1637(object):
         self.__write_dsp_ctrl()
 
     def set_power_on(self):
+        """
+
+        数码管点亮显示，默认点亮
+
+
+        """
         self.__ON = 8
         self.__write_data_cmd()
         self.__write_dsp_ctrl()
 
     def set_power_off(self):
+        """
+
+        数码管熄灭
+
+        """
         self.__ON = 0
         self.__write_data_cmd()
         self.__write_dsp_ctrl()
 
     def set_intensity(self, val=None):
+        """
+
+        设置数码管显示亮度
+
+        Args:
+            val (number): 亮度 0-8
+
+        """
         if val is None:
             return self.__intensity
         val = max(0, min(val, 8))
@@ -91,6 +116,11 @@ class TM1637(object):
             self.__write_dsp_ctrl()
 
     def set_clear(self):
+        """
+
+        清空数码管显示内容
+
+        """
         self.__dat(0, 0)
         self.__dat(1, 0)
         self.__dat(2, 0)
@@ -98,10 +128,28 @@ class TM1637(object):
         self.__buf_d = [0, 0, 0, 0]
 
     def set_show_bit(self, num, bit=0):
+        """
+
+        在指定位置显示单个数字
+
+        Args:
+            bit (number): 小数点位置 0-4
+            num (number): 要显示的数字0-9
+
+        """
         self.__buf_d[bit % self.__LED] = _SEGMENTS[num % 16]
         self.__dat(bit, _SEGMENTS[num % 16])
 
     def set_show_DP(self, bit=1, show=True):
+        """
+
+        显示一个4小数点
+
+        Args:
+            bit (number): 小数点位置 0-4
+            show (bool): 显示控制位 Ture显示 False不显示
+
+        """
         bit = bit % self.__LED
         if show:
             self.__dat(bit, self.__buf_d[bit] | 0x80)
@@ -109,6 +157,14 @@ class TM1637(object):
             self.__dat(bit, self.__buf_d[bit] & 0x7F)
 
     def set_show_num(self, num):
+        """
+
+        显示一个4位数字
+
+        Args:
+            num (number): 要显示的数字 -999——9999
+
+        """
         if num < 0:
             self.__dat(0, 0x40)  # '-'
             num = -num
@@ -120,7 +176,7 @@ class TM1637(object):
 
 
 if __name__ == '__main__':
-    tm = TM1637(J2)
+    tm = NIXIETUBE(J2)
 
     n = 0
     while 1:
