@@ -25,7 +25,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="添加气体传感器" />
+    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="添加气体传感器">
+      <change afterPath="$PROJECT_DIR$/18b20.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rtc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +70,7 @@
       <workItem from="1590077400554" duration="2000" />
       <workItem from="1590077405230" duration="2000" />
       <workItem from="1590113998333" duration="13700000" />
-      <workItem from="1590143422749" duration="3621000" />
+      <workItem from="1590143422749" duration="8143000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
@@ -103,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590148185825</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="添加气体传感器">
+      <created>1590149869310</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1590149869310</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,10 +152,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="添加气体传感器" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="624" y="380" key="Vcs.Push.Dialog.v2" timestamp="1590140858619">
+    <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1590156065737">
       <screen x="0" y="0" width="2048" height="1280" />
     </state>
-    <state x="624" y="380" key="Vcs.Push.Dialog.v2/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1590140858619" />
+    <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1590156065737" />
+    <state x="624" y="380" key="Vcs.Push.Dialog.v2" timestamp="1590149877257">
+      <screen x="0" y="0" width="2048" height="1280" />
+    </state>
+    <state x="624" y="380" key="Vcs.Push.Dialog.v2/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1590149877257" />
     <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590141303368">
       <screen x="0" y="0" width="2048" height="1280" />
     </state>
