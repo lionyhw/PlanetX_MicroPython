@@ -29,7 +29,7 @@ class SOILHUMIDITY(object):
         """
         __value = self.__pin.read_analog()
         value = ((__value - 0) * (100 - 0)) / (1023 - 0) + 0
-        return value
+        return 100-value
 
 
 if __name__ == "__main__":
