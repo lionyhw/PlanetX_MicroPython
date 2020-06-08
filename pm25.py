@@ -31,6 +31,7 @@ class PM25(object):
 
         """
         while self.__pin.read_digital() != 0:
+            pass
         while self.__pin.read_digital() != 1:
             pm25 = running_time()
         while self.__pin.read_digital() != 0:
@@ -41,4 +42,5 @@ class PM25(object):
 if __name__ == '__main__':
     pm2_5 = PM25()
     while True:
-        print(pm2_5.get_pm25())
+        print(pm2_5.get_pm25)
+
