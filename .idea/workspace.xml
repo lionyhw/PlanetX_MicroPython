@@ -25,9 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="修改CO2值反相问题">
+    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="修复pm25">
+      <change afterPath="$PROJECT_DIR$/mq2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mq3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pm25.py" beforeDir="false" afterPath="$PROJECT_DIR$/pm25.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,7 @@
       <workItem from="1591091904044" duration="909000" />
       <workItem from="1591181227023" duration="2214000" />
       <workItem from="1591599053217" duration="91000" />
-      <workItem from="1591599165661" duration="8845000" />
+      <workItem from="1591599165661" duration="13167000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
@@ -166,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591683820715</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="修复pm25">
+      <created>1591685122722</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1591685122722</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +212,8 @@
     <MESSAGE value="添加实时时钟" />
     <MESSAGE value="添加PM2.5模块" />
     <MESSAGE value="修改CO2值反相问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改CO2值反相问题" />
+    <MESSAGE value="修复pm25" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复pm25" />
   </component>
   <component name="WindowStateProjectService">
     <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1590156065737">
