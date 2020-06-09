@@ -25,13 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="添加PM2.5模块">
-      <change afterPath="$PROJECT_DIR$/18b20.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dust.py" afterDir="false" />
+    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="修改CO2值反相问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co2.py" beforeDir="false" afterPath="$PROJECT_DIR$/co2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pm25.py" beforeDir="false" afterPath="$PROJECT_DIR$/pm25.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +42,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1cDuTeC3YoYVatHcW43wQgPwwqE" />
@@ -78,7 +80,7 @@
       <workItem from="1591091904044" duration="909000" />
       <workItem from="1591181227023" duration="2214000" />
       <workItem from="1591599053217" duration="91000" />
-      <workItem from="1591599165661" duration="8284000" />
+      <workItem from="1591599165661" duration="8845000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
@@ -150,7 +152,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591608941393</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="修改CO2值反相问题">
+      <created>1591683772688</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1591683772688</updated>
+    </task>
+    <task id="LOCAL-00012" summary="修改CO2值反相问题">
+      <created>1591683820715</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1591683820715</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,16 +203,18 @@
     <MESSAGE value="添加气体传感器" />
     <MESSAGE value="添加实时时钟" />
     <MESSAGE value="添加PM2.5模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加PM2.5模块" />
+    <MESSAGE value="修改CO2值反相问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改CO2值反相问题" />
   </component>
   <component name="WindowStateProjectService">
     <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1590156065737">
       <screen x="0" y="0" width="2048" height="1280" />
     </state>
     <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1590156065737" />
-    <state x="624" y="380" key="Vcs.Push.Dialog.v2" timestamp="1591608998209">
-      <screen x="0" y="0" width="2048" height="1280" />
+    <state x="546" y="333" key="Vcs.Push.Dialog.v2" timestamp="1591684074078">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state x="546" y="333" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1591684074078" />
     <state x="624" y="380" key="Vcs.Push.Dialog.v2/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1591182398323" />
     <state x="624" y="380" key="Vcs.Push.Dialog.v2/0.0.2048.1280@0.0.2048.1280" timestamp="1591608998209" />
     <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591600238955">
@@ -204,6 +222,10 @@
     </state>
     <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1591181257853" />
     <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1280@0.0.2048.1280" timestamp="1591600238955" />
+    <state x="529" y="355" key="git4idea.merge.GitPullDialog" timestamp="1591683898100">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="529" y="355" key="git4idea.merge.GitPullDialog/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1591683898100" />
     <state x="867" y="438" key="refactoring.ChangeSignatureDialog" timestamp="1590136328645">
       <screen x="0" y="0" width="2048" height="1280" />
     </state>
