@@ -1,6 +1,6 @@
-import dht11
-dht = dht11.DHT11()
+from microbit import *
+import oled
 
-dht.read()
-while True:
-    pass
+display_oled = oled.OLED1306()
+
+display_oled.set_text(0,0,"oasidjaosidj")
