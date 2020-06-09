@@ -26,7 +26,7 @@ class CO2(object):
         获取二氧化碳值
 
         """
-        return self.__pin.read_analog()
+        return 1024 - self.__pin.read_analog()
 
 
 if __name__ == '__main__':

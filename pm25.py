@@ -27,7 +27,7 @@ class PM25(object):
     def get_pm25(self):
         """基本描述
 
-        获取一氧化碳值
+        获取PM2。5值
 
         """
         while self.__pin.read_digital() != 0:
