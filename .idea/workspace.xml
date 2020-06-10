@@ -25,11 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="添加mq2   mq3">
-      <change afterPath="$PROJECT_DIR$/mp3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gesture.py" beforeDir="false" afterPath="$PROJECT_DIR$/gesture.py" afterDir="false" />
-    </list>
+    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="添加MP3，修改了手势的注释" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +77,7 @@
       <workItem from="1591091904044" duration="909000" />
       <workItem from="1591181227023" duration="2214000" />
       <workItem from="1591599053217" duration="91000" />
-      <workItem from="1591599165661" duration="21273000" />
+      <workItem from="1591599165661" duration="21592000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
@@ -181,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591703899216</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="添加MP3，修改了手势的注释">
+      <created>1591775320697</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1591775320697</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,17 +224,18 @@
     <MESSAGE value="修改CO2值反相问题" />
     <MESSAGE value="修复pm25" />
     <MESSAGE value="添加mq2   mq3" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加mq2   mq3" />
+    <MESSAGE value="添加MP3，修改了手势的注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加MP3，修改了手势的注释" />
   </component>
   <component name="WindowStateProjectService">
     <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1590156065737">
       <screen x="0" y="0" width="2048" height="1280" />
     </state>
     <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1590156065737" />
-    <state x="546" y="333" key="Vcs.Push.Dialog.v2" timestamp="1591703935408">
+    <state x="546" y="333" key="Vcs.Push.Dialog.v2" timestamp="1591775326444">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="546" y="333" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1591703935408" />
+    <state x="546" y="333" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1591775326444" />
     <state x="624" y="380" key="Vcs.Push.Dialog.v2/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1591182398323" />
     <state x="624" y="380" key="Vcs.Push.Dialog.v2/0.0.2048.1280@0.0.2048.1280" timestamp="1591608998209" />
     <state x="711" y="491" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591703920869">

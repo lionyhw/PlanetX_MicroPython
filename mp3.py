@@ -30,14 +30,13 @@ class MP3(object):
 
     def __init__(self, RJ_pin):
         if RJ_pin == J1:
-            # uart.init()
             uart.init(tx=pin8)
         elif RJ_pin == J2:
-            uart.init(pin12)
+            uart.init(tx=pin12)
         elif RJ_pin == J3:
-            uart.init(pin14)
+            uart.init(tx=pin14)
         elif RJ_pin == J4:
-            uart.init(pin16)
+            uart.init(tx=pin16)
 
     def __sendData(self):
         # print("data Source:",DataBuf)
