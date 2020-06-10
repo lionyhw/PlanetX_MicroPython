@@ -25,7 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="添加MP3，修改了手势的注释" />
+    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="添加MP3，修改了手势的注释">
+      <change beforePath="$PROJECT_DIR$/mp3.py" beforeDir="false" afterPath="$PROJECT_DIR$/mp3.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +79,7 @@
       <workItem from="1591091904044" duration="909000" />
       <workItem from="1591181227023" duration="2214000" />
       <workItem from="1591599053217" duration="91000" />
-      <workItem from="1591599165661" duration="21592000" />
+      <workItem from="1591599165661" duration="21746000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>

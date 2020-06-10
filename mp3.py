@@ -39,10 +39,6 @@ class MP3(object):
             uart.init(tx=pin16)
 
     def __sendData(self):
-        # print("data Source:",DataBuf)
-        mybuff = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-        for i in [0, 8]:
-            mybuff[i] = DataBuf[i]
         uart.write(bytes(DataBuf))
 
     def __checkSum(self):
