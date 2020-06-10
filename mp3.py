@@ -116,6 +116,8 @@ class MP3(object):
 
 if __name__ == '__main__':
     player = MP3(J1)
-    while 1:
-        player.exeCute(PlayNext)
-        sleep(5000)
+    while True:
+        if button_a.is_pressed():
+            player.exeCute(Play)
+        elif button_b.is_pressed():
+            player.exeCute(Pause)
