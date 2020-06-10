@@ -68,10 +68,10 @@ class GESTURE(object):
     def get_gesture(self):
         """
 
-        读取当前颜色HUE值
+        读取当前手势值
 
         Returns:
-            hue HUE颜色系统中的颜色，根据色环判断具体颜色
+            读取当前手势值
         """
         __tmp = self.__i2cread_gesture(0x43)
 
