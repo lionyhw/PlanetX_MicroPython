@@ -5,14 +5,13 @@ from enum import *
 class DUST(object):
     """基本描述
 
-    HC_SR04超声波支持库，可以选择返回厘米和英尺
+    灰尘传感器库
 
     Args:
-        pin_trig (pin): Trig信号引脚
-        pin_echo (pin): Echo信号引脚
+        RJ_pin (pin): 连接端口
 
     Returns:
-        distance: 距离
+        __dust: 灰尘值 ug/m3
     """
 
     def __init__(self, RJ_pin):
@@ -26,13 +25,11 @@ class DUST(object):
     def get_dust(self):
         """基本描述
 
-        读取距离值
+        读取灰尘值
 
-        Args:
-            unit (number): 检测距离单位 0 厘米 1 英尺
 
         Returns:
-            distance: 距离
+            __dust:灰尘值 ug/m3
         """
         __voltage = 0
         __dust = 0
@@ -45,6 +42,7 @@ class DUST(object):
         sleep(100)
 #        pins.digitalWritePin(vLED, 1);
         self.__pin_vLED.write_digital(1)
+#        return ((value - fromLow) * (toHigh - toLow)) / (fromHigh - fromLow) + toLow;
 #        voltage = pins.map(
 #            voltage,
 #            0,
@@ -52,15 +50,15 @@ class DUST(object):
 #            0,
 #            Reference_VOLTAGE / 2 * 3
 #        );
-#        dust = (voltage - 380) * 5 / 29;
-#        if (dust < 0) {
-#            dust = 0
-#        }
-#        return Math.round(dust)
+        __voltage = ((__voltage - 0) * (3100 / 2 * 3 - 0)) / (1023 - 0) + 0
+        __dust = (__voltage - 380) * 5 / 29
+        if __dust < 0:
+            __dust = 0
+        return __dust
 
 
 if __name__ == "__main__":
-    dis = DISTANCE(J1)
+    dis = DUST(J1)
     while 1:
-        print(dis.get_distance())
+        print(dis.get_dust())
         sleep(500)
