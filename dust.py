@@ -34,22 +34,10 @@ class DUST(object):
         __voltage = 0
         __dust = 0
         self.__pin_vLED.write_digital(0)
-#        control.waitMicros(160);
         sleep(160)
-#        voltage = pins.analogReadPin(vo);
         __voltage = self.__pin_vo.read_analog()
-#        control.waitMicros(100);
         sleep(100)
-#        pins.digitalWritePin(vLED, 1);
         self.__pin_vLED.write_digital(1)
-#        return ((value - fromLow) * (toHigh - toLow)) / (fromHigh - fromLow) + toLow;
-#        voltage = pins.map(
-#            voltage,
-#            0,
-#            1023,
-#            0,
-#            Reference_VOLTAGE / 2 * 3
-#        );
         __voltage = ((__voltage - 0) * (3100 / 2 * 3 - 0)) / (1023 - 0) + 0
         __dust = (__voltage - 380) * 5 / 29
         if __dust < 0:
