@@ -36,7 +36,7 @@ class DUST(object):
         __dust = 0
         self.__pin_vLED.write_digital(0)
         utime.sleep_us(160)
-        __voltage = self.__pin_vo.read_analog()
+        __voltage = self.__pin_vo.read_analog() * 6.5
         utime.sleep_us(100)
         self.__pin_vLED.write_digital(1)
         __voltage = ((__voltage - 0) * (3100 / 2 * 3 - 0)) / (1023 - 0) + 0
