@@ -25,9 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="添加WI-FI模块（未完成）">
+    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="dust debug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wifi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wifi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dust.py" beforeDir="false" afterPath="$PROJECT_DIR$/dust.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +84,8 @@
       <workItem from="1591844547091" duration="77000" />
       <workItem from="1591844639654" duration="93000" />
       <workItem from="1591844747708" duration="103000" />
-      <workItem from="1591845595900" duration="16861000" />
+      <workItem from="1591845595900" duration="18147000" />
+      <workItem from="1592465157975" duration="1100000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
@@ -198,7 +199,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591883879018</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="添加WI-FI模块（未测试）">
+      <created>1591970399859</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1591970399859</updated>
+    </task>
+    <task id="LOCAL-00018" summary="dust debug">
+      <created>1591970475179</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1591970475179</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,23 +255,25 @@
     <MESSAGE value="添加mq2   mq3" />
     <MESSAGE value="添加MP3，修改了手势的注释" />
     <MESSAGE value="添加WI-FI模块（未完成）" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加WI-FI模块（未完成）" />
+    <MESSAGE value="添加WI-FI模块（未测试）" />
+    <MESSAGE value="dust debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="dust debug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1590156065737">
       <screen x="0" y="0" width="2048" height="1280" />
     </state>
     <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1590156065737" />
-    <state x="546" y="333" key="Vcs.Push.Dialog.v2" timestamp="1591883884682">
+    <state x="546" y="333" key="Vcs.Push.Dialog.v2" timestamp="1591970478277">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="546" y="333" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1591883884682" />
+    <state x="546" y="333" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1591970478277" />
     <state x="624" y="380" key="Vcs.Push.Dialog.v2/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1591182398323" />
     <state x="624" y="380" key="Vcs.Push.Dialog.v2/0.0.2048.1280@0.0.2048.1280" timestamp="1591608998209" />
-    <state x="711" y="491" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591703920869">
+    <state x="711" y="491" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592465168925">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="711" y="491" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1591703920869" />
+    <state x="711" y="491" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1592465168925" />
     <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1591181257853" />
     <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1280@0.0.2048.1280" timestamp="1591600238955" />
     <state x="529" y="355" key="git4idea.merge.GitPullDialog" timestamp="1591683898100">
