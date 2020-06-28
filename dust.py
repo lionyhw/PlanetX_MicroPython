@@ -28,7 +28,6 @@ class DUST(object):
 
         读取灰尘值
 
-
         Returns:
             __dust:灰尘值 ug/m3
         """
