@@ -14,59 +14,59 @@ class BUTTON(object):
 
     def __init__(self, RJ_pin):
         if RJ_pin == J1:
-            self.__pinA = pin1
-            self.__pinB = pin8
+            self.__pinC = pin1
+            self.__pinD = pin8
         elif RJ_pin == J2:
-            self.__pinA = pin2
-            self.__pinB = pin12
+            self.__pinC = pin2
+            self.__pinD = pin12
         elif RJ_pin == J3:
-            self.__pinA = pin13
-            self.__pinB = pin14
+            self.__pinC = pin13
+            self.__pinD = pin14
         elif RJ_pin == J4:
-            self.__pinA = pin15
-            self.__pinB = pin16
+            self.__pinC = pin15
+            self.__pinD = pin16
 
-        self.__pinA.set_pull(self.__pinA.PULL_UP)
-        self.__pinB.set_pull(self.__pinB.PULL_UP)
+        self.__pinC.set_pull(self.__pinC.PULL_UP)
+        self.__pinD.set_pull(self.__pinD.PULL_UP)
 
-    def A_is_pressed(self) -> bool:
+    def C_is_pressed(self) -> bool:
         """基本描述
 
-        判断A按钮按下
+        判断C按钮按下
 
         Returns:
             boolean: 按下返回True, 未按下返回False
 
         """
-        if self.__pinA.read_digital() == 0 and self.__pinB.read_digital() == 1:
+        if self.__pinC.read_digital() == 0 and self.__pinD.read_digital() == 1:
             return True
         else:
             return False
 
-    def B_is_pressed(self) -> bool:
+    def D_is_pressed(self) -> bool:
         """基本描述
 
-        判断A按钮按下
+        判断D按钮按下
 
         Returns:
             boolean: 按下返回True, 未按下返回False
 
         """
-        if self.__pinB.read_digital() == 0 and self.__pinA.read_digital() == 1:
+        if self.__pinD.read_digital() == 0 and self.__pinC.read_digital() == 1:
             return True
         else:
             return False
 
-    def AB_is_pressed(self) -> bool:
+    def CD_is_pressed(self) -> bool:
         """基本描述
 
-        判断AB按钮同时按下
+        判断CD按钮同时按下
 
         Returns:
             boolean: 按下返回True, 未按下返回False
 
         """
-        if self.__pinB.read_digital() == 0 and self.__pinA.read_digital() == 0:
+        if self.__pinD.read_digital() == 0 and self.__pinC.read_digital() == 0:
             return True
         else:
             return False
@@ -75,9 +75,9 @@ class BUTTON(object):
 if __name__ == '__main__':
     button = BUTTON(J1)
     while True:
-        if button.A_is_pressed():
+        if button.C_is_pressed():
             display.show(Image.HAPPY)
-        elif button.B_is_pressed():
+        elif button.D_is_pressed():
             display.show(Image.SAD)
-        elif button.AB_is_pressed():
+        elif button.CD_is_pressed():
             display.show(Image.COW)
