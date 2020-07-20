@@ -121,3 +121,4 @@ if __name__ == '__main__':
             player.exeCute(Play)
         elif button_b.is_pressed():
             player.exeCute(Pause)
+            player.folderPlay(10, 10, True)
