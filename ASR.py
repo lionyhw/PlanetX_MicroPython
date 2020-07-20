@@ -17,7 +17,7 @@ class ASR(object):
     def get_ASR(self):
         """基本描述
 
-        获取一氧化碳值
+        获取语音识别条目ID
 
         """
         t = i2c.read(0x0B, 1)
