@@ -40,6 +40,7 @@ class MP3(object):
 
     def __sendData(self):
         uart.write(bytes(DataBuf))
+        sleep(1000)
 
     def __checkSum(self):
         total = 0
@@ -94,7 +95,7 @@ class MP3(object):
     def folderPlay(self, fileNum: int, folderNum: int = 0, Repeat: bool = False):
         """
 
-        设置播放器音量大小
+        指定文件夹文件名播放
 
         Args:
             fileNum (number): 歌曲文件名
@@ -106,8 +107,8 @@ class MP3(object):
         para1 = folderNum
         para2 = fileNum
         DataBuf[3] = CMD
-        DataBuf[5] = para1
-        DataBuf[6] = para2
+        DataBuf[5] = para2
+        DataBuf[6] = para1
         self.__checkSum()
         self.__sendData()
         if Repeat:
@@ -120,5 +121,4 @@ if __name__ == '__main__':
         if button_a.is_pressed():
             player.exeCute(Play)
         elif button_b.is_pressed():
-            player.exeCute(Pause)
-            player.folderPlay(10, 10, True)
+            player.folderPlay(01, 006, False)
