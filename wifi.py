@@ -14,7 +14,6 @@ class WIFI(object):
 
     def __init__(self, RJ_pin):
         if RJ_pin == J1:
-            # pass
             uart.init(tx=pin8, rx=pin1, baudrate=115200)
         elif RJ_pin == J2:
             uart.init(tx=pin12, rx=pin8, baudrate=115200)

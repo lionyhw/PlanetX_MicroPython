@@ -25,7 +25,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="fix  mp3" />
+    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="fix  mp3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mp3.py" beforeDir="false" afterPath="$PROJECT_DIR$/mp3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wifi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wifi.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,6 +97,8 @@
       <workItem from="1594727695105" duration="1503000" />
       <workItem from="1595233792199" duration="4399000" />
       <workItem from="1595508749867" duration="1515000" />
+      <workItem from="1595513243662" duration="1067000" />
+      <workItem from="1596695282984" duration="369000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
