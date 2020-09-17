@@ -1,146 +1,21 @@
-from microbit import *
+import microbit as uBit
 import time
+from enum import *
 
 DEGREES = u'\xb0'
-
-J1 = pin1
-J2 = pin2
-J3 = pin13
-J4 = pin15
 
 
 class DataError(Exception):
     pass
 
 
-def _calc_bytes(pull_up_lengths):
-
-    shortest = 1000
-    longest = 0
-
-    for i in range(0, len(pull_up_lengths)):
-        length = pull_up_lengths[i]
-        if length < shortest:
-            shortest = length
-        if length > longest:
-            longest = length
-
-    halfway = shortest + (longest - shortest) / 2
-    data = bytearray(5)
-    did = 0
-    byte = 0
-
-    for i in range(len(pull_up_lengths)):
-        byte = byte << 1
-
-        if pull_up_lengths[i] > halfway:
-            byte = byte | 1
-
-        if (i + 1) % 8 == 0:
-            data[did] = byte
-            did += 1
-            byte = 0
-
-    return data
-
-
-def _calc_checksum(data):
-    return data[0] + data[1] + data[2] + data[3] & 0xff
-
-
-def _parse_data(buffer_):
-    # changed initial states, tyey are lost in the change over
-    INIT_PULL_DOWN = 1
-    INIT_PULL_UP = 2
-    DATA_1_PULL_DOWN = 3
-    DATA_PULL_UP = 4
-    DATA_PULL_DOWN = 5
-
-    # state = INIT_PULL_DOWN
-    state = INIT_PULL_UP
-
-    max_bits = 50
-    bits = bytearray(max_bits)
-    length = 0
-    bit_ = 0
-
-    for i in range(len(buffer_)):
-
-        current = buffer_[i]
-        length += 1
-
-        if state == INIT_PULL_DOWN:
-            if current == 0:
-                state = INIT_PULL_UP
-                continue
-            else:
-                continue
-        if state == INIT_PULL_UP:
-            if current == 1:
-                state = DATA_1_PULL_DOWN
-                continue
-            else:
-                continue
-        if state == DATA_1_PULL_DOWN:
-            if current == 0:
-                state = DATA_PULL_UP
-                continue
-            else:
-                continue
-        if state == DATA_PULL_UP:
-            if current == 1:
-                length = 0
-                state = DATA_PULL_DOWN
-                continue
-            else:
-                continue
-        if state == DATA_PULL_DOWN:
-            if current == 0:
-                bits[bit_] = length
-                bit_ += 1
-                state = DATA_PULL_UP
-                continue
-            else:
-                continue
-
-        if bit_ >= max_bits:
-            break
-
-    if bit_ == 0:
-        return None
-
-    results = bytearray(bit_)
-    for i in range(bit_):
-        results[i] = bits[i]
-    return results
-
-
 class DHT11:
-    """基本描述
+    def __init__(self, pin):
+        self._pin = pin
 
-    DHT11温湿度传感器
-
-    """
-    def __init__(self, RJ_pin):
-        if RJ_pin == J1:
-            self.__pin = pin8
-        elif RJ_pin == J2:
-            self.__pin = pin12
-        elif RJ_pin == J3:
-            self.__pin = pin14
-        elif RJ_pin == J4:
-            self.__pin = pin16
-
-    def get_value(self):
-        """
-
-        读取当前温湿度，两次请求必须间隔超过2s以上
-
-        Returns:
-            temp, humid 两个返回值温度和湿度，列表返回，读取可用[0][1]
-        """
+    def read(self):
         # creating these locals speeds things up len() is very slow
-        pin = self.__pin
+        pin = self._pin
         pin2bit = self._pin2bit()
         buffer_ = bytearray(320)
         length = (len(buffer_) // 4) * 4
@@ -167,7 +42,7 @@ class DHT11:
         #    print(b, end = "")
         # print('')
 
-        data = _parse_data(buffer_)
+        data = self._parse_data(buffer_)
 
         del buffer_
 
@@ -178,48 +53,26 @@ class DHT11:
                 bits = len(data)
             raise DataError("Too many or too few bits " + str(bits))
 
-        data = _calc_bytes(data)
+        data = self._calc_bytes(data)
 
-        checksum = _calc_checksum(data)
+        checksum = self._calc_checksum(data)
         if data[4] != checksum:
             raise DataError("Checksum invalid.")
 
         temp = data[2] + (data[3] / 10)
         humid = data[0] + (data[1] / 10)
-        return temp, humid
+        return (temp, humid)
 
     def _pin2bit(self):
         # this is a dictionary, microbit.pinX can't be a __hash__
-        pin = self.__pin
-        if pin == pin0:
-            shift = 3
-        elif pin == pin1:
-            shift = 2
-        elif pin == pin2:
-            shift = 1
-        elif pin == pin3:
-            shift = 4
-        elif pin == pin4:
-            shift = 5
-        elif pin == pin6:
-            shift = 12
-        elif pin == pin7:
-            shift = 11
-        elif pin == pin8:
+        pin = self._pin
+        if pin == J1:
             shift = 18
-        elif pin == pin9:
-            shift = 10
-        elif pin == pin10:
-            shift = 6
-        elif pin == pin12:
+        elif pin == J2:
             shift = 20
-        elif pin == pin13:
-            shift = 23
-        elif pin == pin14:
+        elif pin == J3:
             shift = 22
-        elif pin == pin15:
-            shift = 21
-        elif pin == pin16:
+        elif pin == J4:
             shift = 16
         else:
             raise ValueError('function not suitable for this pin')
@@ -295,11 +148,114 @@ class DHT11:
         label(RETURN)
         mov(r0, r5)  # return number of bytes written
 
+    def _parse_data(self, buffer_):
+        # changed initial states, tyey are lost in the change over
+        INIT_PULL_DOWN = 1
+        INIT_PULL_UP = 2
+        DATA_1_PULL_DOWN = 3
+        DATA_PULL_UP = 4
+        DATA_PULL_DOWN = 5
+
+        # state = INIT_PULL_DOWN
+        state = INIT_PULL_UP
+
+        max_bits = 50
+        bits = bytearray(max_bits)
+        length = 0
+        bit_ = 0
+
+        for i in range(len(buffer_)):
+
+            current = buffer_[i]
+            length += 1
+
+            if state == INIT_PULL_DOWN:
+                if current == 0:
+                    state = INIT_PULL_UP
+                    continue
+                else:
+                    continue
+            if state == INIT_PULL_UP:
+                if current == 1:
+                    state = DATA_1_PULL_DOWN
+                    continue
+                else:
+                    continue
+            if state == DATA_1_PULL_DOWN:
+                if current == 0:
+                    state = DATA_PULL_UP
+                    continue
+                else:
+                    continue
+            if state == DATA_PULL_UP:
+                if current == 1:
+                    length = 0
+                    state = DATA_PULL_DOWN
+                    continue
+                else:
+                    continue
+            if state == DATA_PULL_DOWN:
+                if current == 0:
+                    bits[bit_] = length
+                    bit_ += 1
+                    state = DATA_PULL_UP
+                    continue
+                else:
+                    continue
+
+            if bit_ >= max_bits:
+                break
+
+        if bit_ == 0:
+            return None
+
+        results = bytearray(bit_)
+        for i in range(bit_):
+            results[i] = bits[i]
+        return results
+
+    def _calc_bytes(self, pull_up_lengths):
+
+        shortest = 1000
+        longest = 0
+
+        for i in range(0, len(pull_up_lengths)):
+            length = pull_up_lengths[i]
+            if length < shortest:
+                shortest = length
+            if length > longest:
+                longest = length
+
+        halfway = shortest + (longest - shortest) / 2
+        data = bytearray(5)
+        did = 0
+        byte = 0
+
+        for i in range(len(pull_up_lengths)):
+            byte = byte << 1
+
+            if pull_up_lengths[i] > halfway:
+                byte = byte | 1
+
+            if ((i + 1) % 8 == 0):
+                data[did] = byte
+                did += 1
+                byte = 0
+
+        return data
+
+    def _calc_checksum(self, data):
+        return data[0] + data[1] + data[2] + data[3] & 0xff
+
 
 if __name__ == '__main__':
 
     sensor = DHT11(J1)
     while True:
-        t, h = sensor.get_value()
-        print("%2.1f%sC  %2.1f%% " % (t, DEGREES, h))
+        try:
+            t, h = sensor.read()
+            print("%2.1f%sC  %2.1f%% " % (t, DEGREES, h))
+        except DataError as e:
+            print("Error : " + str(e))
+
         time.sleep(2)

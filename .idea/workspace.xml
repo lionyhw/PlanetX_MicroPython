@@ -27,8 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="fix  mp3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mp3.py" beforeDir="false" afterPath="$PROJECT_DIR$/mp3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wifi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wifi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dht11.py" beforeDir="false" afterPath="$PROJECT_DIR$/dht11.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +98,8 @@
       <workItem from="1595508749867" duration="1515000" />
       <workItem from="1595513243662" duration="1067000" />
       <workItem from="1596695282984" duration="369000" />
+      <workItem from="1600132467839" duration="424000" />
+      <workItem from="1600313119121" duration="1168000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
@@ -325,24 +326,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="fix  mp3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1590156065737">
-      <screen x="0" y="0" width="2048" height="1280" />
-    </state>
-    <state x="867" y="554" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1590156065737" />
     <state x="546" y="333" key="Vcs.Push.Dialog.v2" timestamp="1595512595709">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="546" y="333" key="Vcs.Push.Dialog.v2/-1080.0.1080.1920/0.0.1792.1120@0.0.1792.1120" timestamp="1595512595709" />
     <state x="546" y="333" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1592473670515" />
-    <state x="624" y="380" key="Vcs.Push.Dialog.v2/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1591182398323" />
     <state x="624" y="380" key="Vcs.Push.Dialog.v2/0.0.2048.1280@0.0.2048.1280" timestamp="1594257289650" />
-    <state x="-651" y="842" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594365355622">
-      <screen x="-1080" y="0" width="1080" height="1920" />
+    <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600132486975">
+      <screen x="0" y="0" width="2048" height="1280" />
     </state>
     <state x="-651" y="842" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1080.0.1080.1920/0.0.1792.1120@-1080.0.1080.1920" timestamp="1594365355622" />
     <state x="711" y="491" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1592465168925" />
-    <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1591181257853" />
-    <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1280@0.0.2048.1280" timestamp="1591600238955" />
+    <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1280@0.0.2048.1280" timestamp="1600132486975" />
     <state x="529" y="355" key="git4idea.merge.GitPullDialog" timestamp="1591683898100">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -351,10 +346,6 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="600" height="428" key="javadoc.popup/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1591708877119" />
-    <state x="867" y="438" key="refactoring.ChangeSignatureDialog" timestamp="1590136328645">
-      <screen x="0" y="0" width="2048" height="1280" />
-    </state>
-    <state x="867" y="438" key="refactoring.ChangeSignatureDialog/-1920.40.1920.1080/0.0.2048.1280@0.0.2048.1280" timestamp="1590136328645" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
