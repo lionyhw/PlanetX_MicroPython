@@ -31,7 +31,6 @@ class FANS(object):
         if state == 0:
             self.__pin.write_analog(0)
         elif state == 1:
-            self.__pin.set_analog_period(1)
             speed = ((speed - 0) * (1023 - 0)) / (100 - 0) + 0;
             self.__pin.write_analog(speed)
         else:
