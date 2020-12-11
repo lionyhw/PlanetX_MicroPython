@@ -21,7 +21,7 @@ class FANS(object):
     def set_fans(self, state, speed=100):
         """基本描述
 
-        点亮或者熄灭LED
+        启动或者停止电机
 
         Args:
             state (numbers): 1运转 0停止
