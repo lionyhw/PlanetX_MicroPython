@@ -26,7 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="fix  DHT11">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/18b20.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +99,7 @@
       <workItem from="1596695282984" duration="369000" />
       <workItem from="1600132467839" duration="424000" />
       <workItem from="1600313119121" duration="1624000" />
+      <workItem from="1607688278839" duration="156000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>

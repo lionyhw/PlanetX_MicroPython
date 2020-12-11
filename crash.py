@@ -33,7 +33,7 @@ class CRASH(object):
             boolean: 按下返回True, 未按下返回False
 
         """
-        if self.__pin.read_digital() == 0 :
+        if self.__pin.read_digital() == 0:
             return True
         else:
             return False
