@@ -25,8 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="fix  DHT11">
-      <change beforePath="$PROJECT_DIR$/18b20.py" beforeDir="false" />
+    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="delete 18b20.py">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/led.py" beforeDir="false" afterPath="$PROJECT_DIR$/led.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,7 @@
       <workItem from="1596695282984" duration="369000" />
       <workItem from="1600132467839" duration="424000" />
       <workItem from="1600313119121" duration="1624000" />
-      <workItem from="1607688278839" duration="156000" />
+      <workItem from="1607688278839" duration="1694000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
@@ -283,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600314644390</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="delete 18b20.py">
+      <created>1607688716690</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1607688716690</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,29 +339,19 @@
     <MESSAGE value="fix" />
     <MESSAGE value="fix  mp3" />
     <MESSAGE value="fix  DHT11" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix  DHT11" />
+    <MESSAGE value="delete 18b20.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete 18b20.py" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="624" y="380" key="Vcs.Push.Dialog.v2" timestamp="1600314662318">
+    <state x="624" y="380" key="Vcs.Push.Dialog.v2" timestamp="1607688719790">
       <screen x="0" y="0" width="2048" height="1280" />
     </state>
-    <state x="546" y="333" key="Vcs.Push.Dialog.v2/-1080.0.1080.1920/0.0.1792.1120@0.0.1792.1120" timestamp="1595512595709" />
-    <state x="546" y="333" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1592473670515" />
     <state x="624" y="380" key="Vcs.Push.Dialog.v2/0.0.2048.1280@0.0.2048.1280" timestamp="1600314662318" />
+    <state x="624" y="380" key="Vcs.Push.Dialog.v2/2048.0.1080.1920/0.0.2048.1280@0.0.2048.1280" timestamp="1607688719790" />
     <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600132486975">
       <screen x="0" y="0" width="2048" height="1280" />
     </state>
-    <state x="-651" y="842" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1080.0.1080.1920/0.0.1792.1120@-1080.0.1080.1920" timestamp="1594365355622" />
-    <state x="711" y="491" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1592465168925" />
     <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1280@0.0.2048.1280" timestamp="1600132486975" />
-    <state x="529" y="355" key="git4idea.merge.GitPullDialog" timestamp="1591683898100">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="529" y="355" key="git4idea.merge.GitPullDialog/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1591683898100" />
-    <state width="600" height="428" key="javadoc.popup" timestamp="1591708877119">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="600" height="428" key="javadoc.popup/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1591708877119" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
