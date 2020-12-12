@@ -11,7 +11,7 @@ class MQ3(object):
         RJ_pin (pin): 连接端口
 
     Returns:
-        value: 烟雾值
+        value: 酒精值
     """
 
     def __init__(self, RJ_pin):
@@ -23,7 +23,7 @@ class MQ3(object):
     def get_smoke(self):
         """基本描述
 
-        获取烟雾值
+        获取酒精值
 
         """
         return self.__pin.read_analog()
