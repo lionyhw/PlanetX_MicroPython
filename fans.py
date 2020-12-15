@@ -17,6 +17,10 @@ class FANS(object):
             self.__pin = pin1
         elif RJ_pin == J2:
             self.__pin = pin2
+        elif RJ_pin == J3:
+            self.__pin = pin13
+        elif RJ_pin == J3:
+            self.__pin = pin15
 
     def set_fans(self, state, speed=100):
         """基本描述
