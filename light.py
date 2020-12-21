@@ -13,6 +13,7 @@ class LIGHT(object):
     Returns:
         value: 光线强度 0-16000lux
     """
+
     def __init__(self, RJ_pin):
         if RJ_pin == J1:
             self.__pin = pin1
@@ -29,10 +30,13 @@ class LIGHT(object):
         """
         __value = self.__pin.read_analog()
         if __value <= 200:
-            return ((__value - 43) * (1600 - 0)) / (200 - 43) + 0
+            __final_val = ((__value - 15) * (1600 - 0)) / (200 - 15) + 0
         else:
-            return ((__value - 200) * (14000 - 1600)) / (1023 - 200) + 1600
-
+            __final_val = ((__value - 200) * (14000 - 1600)) / (1023 - 200) + 1600
+        if __final_val <= 0:
+            return 0
+        else:
+            return __final_val
 
 if __name__ == "__main__":
     s = LIGHT(J1)
