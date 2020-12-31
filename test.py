@@ -1,6 +1,8 @@
+# Add your Python code here. E.g.
 from microbit import *
-import oled
+uart.init(baudrate=115200, bits=8, parity=None, stop=1, tx=pin1, rx=pin2)
 
-display_oled = oled.OLED1306()
-
-display_oled.set_text(0,0,"oasidjaosidj")
+while True:
+    display.scroll(uart.readall())
+    if button_a.is_pressed():
+        uart.write('he')

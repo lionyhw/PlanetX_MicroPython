@@ -1,5 +1,4 @@
 from microbit import *
-from enum import *
 
 
 class ASR(object):

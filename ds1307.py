@@ -12,7 +12,7 @@ DS1307_REG_CTRL = 7
 DS1307_REG_RAM = 8
 
 
-class DS1307():
+class DS1307(object):
     # set reg
     def setReg(self, reg, dat):
         i2c.write(DS1307_I2C_ADDRESS, bytearray([reg, dat]))
