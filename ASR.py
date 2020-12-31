@@ -10,7 +10,7 @@ class ASR(object):
         value: 识别到的语音条目
     """
 
-    def __init__(self, RJ_pin):
+    def __init__(self):
         pass
 
     def get_ASR(self):

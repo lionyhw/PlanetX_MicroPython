@@ -27,9 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="fix light.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ds1307.py" beforeDir="false" afterPath="$PROJECT_DIR$/ds1307.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASR.py" beforeDir="false" afterPath="$PROJECT_DIR$/ASR.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +108,7 @@
       <workItem from="1608777462104" duration="280000" />
       <workItem from="1609149071264" duration="342000" />
       <workItem from="1609309543724" duration="627000" />
+      <workItem from="1609398988429" duration="130000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
@@ -363,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608537489487</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="fix light.py">
+      <created>1609399023377</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1609399023377</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,15 +427,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="fix light.py" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="624" y="380" key="Vcs.Push.Dialog.v2" timestamp="1608537492161">
+    <state x="624" y="380" key="Vcs.Push.Dialog.v2" timestamp="1609399026728">
       <screen x="0" y="0" width="2048" height="1280" />
     </state>
-    <state x="624" y="380" key="Vcs.Push.Dialog.v2/0.0.2048.1280@0.0.2048.1280" timestamp="1600314662318" />
-    <state x="624" y="380" key="Vcs.Push.Dialog.v2/2048.0.1080.1920/0.0.2048.1280@0.0.2048.1280" timestamp="1608537492161" />
-    <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600132486975">
-      <screen x="0" y="0" width="2048" height="1280" />
-    </state>
-    <state x="812" y="561" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1280@0.0.2048.1280" timestamp="1600132486975" />
+    <state x="624" y="380" key="Vcs.Push.Dialog.v2/2048.0.1080.1920/0.0.2048.1280@0.0.2048.1280" timestamp="1609399026728" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
