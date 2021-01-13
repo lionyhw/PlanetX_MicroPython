@@ -16,6 +16,7 @@ APDS9960_BDATAL = 0x9A
 APDS9960_BDATAH = 0x9B
 APDS9960_GCONF4 = 0xAB
 APDS9960_AICLEAR = 0xE7
+color_list = ["red", "green", "blue", "cyan", "magenta", "yellow", "white"]
 
 
 class COLOR(object):
@@ -122,6 +123,32 @@ class COLOR(object):
         b = b * 255 / avg
         hue = self.__rgbtohsl(r, g, b)
         return hue
+
+    def get_color_name(self):
+        """
+
+        读取当前颜色
+
+        Returns:
+            color_list[] 颜色名，字符串
+        """
+        hue = self.get_hue()
+        if 330 < hue < 20:
+            return color_list[0]
+        elif 110 < hue < 150:
+            return color_list[1]
+        elif 200 < hue < 270:
+            return color_list[2]
+        elif 160 < hue < 180:
+            return color_list[3]
+        elif 260 < hue < 330:
+            return color_list[4]
+        elif 30 < hue < 90:
+            return color_list[5]
+        elif 180 <= hue < 220:
+            return color_list[6]
+        else:
+            return "No color"
 
 
 if __name__ == '__main__':
