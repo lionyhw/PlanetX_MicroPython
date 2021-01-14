@@ -29,10 +29,10 @@ class LIGHT(object):
             value: 光强度单位勒克司Lux
         """
         __value = self.__pin.read_analog()
-        if __value <= 200:
-            __final_val = ((__value - 10) * (1600 - 0)) / (200 - 10) + 0
+        if __value <= 300:
+            __final_val = ((__value - 10) * (1600 - 0)) / (300 - 10) + 0
         else:
-            __final_val = ((__value - 200) * (14000 - 1600)) / (1023 - 200) + 1600
+            __final_val = ((__value - 300) * (14000 - 1600)) / (1023 - 300) + 1600
         if __final_val <= 0:
             return 0
         else:
