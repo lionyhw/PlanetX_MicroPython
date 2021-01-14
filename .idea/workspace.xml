@@ -25,10 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="新增颜色识别返回颜色名函数">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/matrix.py" afterDir="false" />
-    </list>
+    <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="新增颜色识别返回颜色名函数" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +108,7 @@
       <workItem from="1609398988429" duration="490000" />
       <workItem from="1609911081567" duration="689000" />
       <workItem from="1610509832084" duration="594000" />
-      <workItem from="1610589137367" duration="2418000" />
+      <workItem from="1610589137367" duration="2739000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
@@ -393,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610590564093</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="新增颜色识别返回颜色名函数">
+      <created>1610591917047</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1610591917047</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,11 +456,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="新增颜色识别返回颜色名函数" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2328" y="570" key="Vcs.Push.Dialog.v2" timestamp="1610590616085">
+    <state x="2328" y="570" key="Vcs.Push.Dialog.v2" timestamp="1610591949416">
       <screen x="2048" y="0" width="1080" height="1920" />
     </state>
     <state x="624" y="380" key="Vcs.Push.Dialog.v2/2048.0.1080.1920/0.0.2048.1280@0.0.2048.1280" timestamp="1610510410219" />
-    <state x="2328" y="570" key="Vcs.Push.Dialog.v2/2048.0.1080.1920/0.0.2048.1280@2048.0.1080.1920" timestamp="1610590616085" />
+    <state x="2328" y="570" key="Vcs.Push.Dialog.v2/2048.0.1080.1920/0.0.2048.1280@2048.0.1080.1920" timestamp="1610591949416" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
