@@ -133,7 +133,7 @@ class COLOR(object):
             color_list[] 颜色名，字符串
         """
         hue = self.get_hue()
-        if 330 < hue < 20:
+        if hue > 330 or hue < 20:
             return color_list[0]
         elif 110 < hue < 150:
             return color_list[1]
@@ -155,4 +155,5 @@ if __name__ == '__main__':
     color = COLOR()
     while True:
         print("HUE: ", color.get_hue())
+        print("Color:", color.get_color_name())
         sleep(5)
