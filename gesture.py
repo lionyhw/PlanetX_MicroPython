@@ -71,15 +71,34 @@ class GESTURE(object):
         读取当前手势值
 
         Returns:
-            读取当前手势值
+            读取当前手势值，字符串
         """
         __tmp = self.__i2cread_gesture(0x43)
-
-        return __tmp
+        if __tmp == 0x01:
+            return "Right"
+        elif __tmp == 0x02:
+            return "Left"
+        elif __tmp == 0x04:
+            return "Up"
+        elif __tmp == 0x08:
+            return "Down"
+        elif __tmp == 0x10:
+            return "Forward"
+        elif __tmp == 0x20:
+            return "Backward"
+        elif __tmp == 0x40:
+            return "Clockwise"
+        elif __tmp == 0x80:
+            return "Anticlockwise"
+        else:
+            __tmp = self.__i2cread_gesture(0x44)
+            if __tmp == 0x01:
+                return "Wave"
+        return "None"
 
 
 if __name__ == '__main__':
-    color = GESTURE()
+    ges = GESTURE()
     while True:
-        print("HUE: ", color.get_gesture())
+        print("get_gesture: ", ges.get_gesture())
         sleep(5)

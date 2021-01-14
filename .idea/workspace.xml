@@ -26,7 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba408349-e519-4f4c-a8d7-98ce1c5ebca0" name="Default Changelist" comment="修复光线识别范围">
-      <change beforePath="$PROJECT_DIR$/light.py" beforeDir="false" afterPath="$PROJECT_DIR$/light.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/18b20.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gesture.py" beforeDir="false" afterPath="$PROJECT_DIR$/gesture.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +112,8 @@
       <workItem from="1609398988429" duration="490000" />
       <workItem from="1609911081567" duration="689000" />
       <workItem from="1610509832084" duration="594000" />
-      <workItem from="1610589137367" duration="3049000" />
+      <workItem from="1610589137367" duration="7122000" />
+      <workItem from="1610603770049" duration="1665000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1590136890657</created>
@@ -406,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610592340879</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="修复光线识别范围">
+      <created>1610592512062</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1610592512062</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,11 +475,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="修复光线识别范围" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2328" y="570" key="Vcs.Push.Dialog.v2" timestamp="1610592342299">
+    <state x="2328" y="570" key="Vcs.Push.Dialog.v2" timestamp="1610592513481">
       <screen x="2048" y="0" width="1080" height="1920" />
     </state>
     <state x="624" y="380" key="Vcs.Push.Dialog.v2/2048.0.1080.1920/0.0.2048.1280@0.0.2048.1280" timestamp="1610510410219" />
-    <state x="2328" y="570" key="Vcs.Push.Dialog.v2/2048.0.1080.1920/0.0.2048.1280@2048.0.1080.1920" timestamp="1610592342299" />
+    <state x="2328" y="570" key="Vcs.Push.Dialog.v2/2048.0.1080.1920/0.0.2048.1280@2048.0.1080.1920" timestamp="1610592513481" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
