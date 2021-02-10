@@ -51,11 +51,11 @@ class NEZHA(object):
         if servo == 1:
             i2c.write(NEZHA_ADDR, bytearray([0x10, angle, 0, 0]))
         elif servo == 2:
-            i2c.write(NEZHA_ADDR, bytearray([0x10, angle, 0, 0]))
+            i2c.write(NEZHA_ADDR, bytearray([0x11, angle, 0, 0]))
         elif servo == 3:
-            i2c.write(NEZHA_ADDR, bytearray([0x10, angle, 0, 0]))
+            i2c.write(NEZHA_ADDR, bytearray([0x12, angle, 0, 0]))
         elif servo == 4:
-            i2c.write(NEZHA_ADDR, bytearray([0x10, angle, 0, 0]))
+            i2c.write(NEZHA_ADDR, bytearray([0x13, angle, 0, 0]))
 
 
 if __name__ == '__main__':
