@@ -26,13 +26,12 @@ cmd = [
 ADDR = 0x3C
 screen = bytearray(1025)  # send byte plus pixels
 screen[0] = 0x40
+zoom = 1
 
 
 class OLED1306(object):
     """基本描述
-
     OLED1306显示屏
-
     """
 
     def __init__(self):
@@ -49,17 +48,21 @@ class OLED1306(object):
         c1, c2 = c & 0x0F, c >> 4
         self.__command([0x00 | c1])  # lower start column address
         self.__command([0x10 | c2])  # upper start column address
-
+        
+    def set_zoom(self, v):
+        global zoom
+        if zoom != v:
+            self.__command([0xd6, v])  # zoom on/off
+            self.__command([0xa7 - v])  # inverted display
+            zoom = v
+            
     def set_pixel(self, x, y, color=1):
         """
-
         点亮或熄灭一个像素点
-
         Args:
             x (number): X 轴  0-127
             y (number): Y 轴  0-63
             color (number): 1 点亮 0 熄灭
-
         Returns:
             NONE
         """
@@ -72,9 +75,7 @@ class OLED1306(object):
 
     def set_clear(self, c=0):
         """
-
         删除所有显示信息，清屏
-
         """
         global screen
         for i in range(1, 1025):
@@ -83,65 +84,55 @@ class OLED1306(object):
 
     def set_power_on(self):
         """
-
         开启显示屏，默认开启
-
         """
         self.__command([0xAF])
 
     def set_power_off(self):
         """
-
         关闭显示屏，黑屏
-
         """
         self.__command([0xAE])
 
     def set_refresh(self):
         """
-
         刷新显示
-
         """
         self.__set_pos()
         i2c.write(ADDR, screen)
 
-    def set_text(self, x, y, s):
+    def set_text(self, x, y, text, draw=1):
         """
-
         显示一行文本
-
         Args:
             x (number): X 轴坐标 0-127
             y (number): Y 轴坐标 0-63
-            s (str): 只接受字符串或字符类型参数
-
+            text (str): 只接受字符串或字符类型参数
         Returns:
             NONE
         """
-        for i in range(0, min(len(s), 12 * 2 - x)):
+        for i in range(0, min(len(text), 12 - x)):
             for c in range(0, 5):
                 col = 0
                 for r in range(1, 6):
-                    p = Image(s[i]).get_pixel(c, r - 1)
+                    p = Image(text[i]).get_pixel(c, r - 1)
                     col = col | (1 << r) if (p != 0) else col
-                ind = (x + i) * 5 + y * 128 + c
+                ind = x * 5 + y * 128 + i * 5 + c + 1
                 screen[ind] = col
-        self.__set_pos(x * 5, y)
-        ind0 = x * 5 + y * 128
-        i2c.write(ADDR, b'\x40' + screen[ind0:ind + 1])
+        if draw == 1:
+            self.set_zoom(1)
+            self.__set_pos(x * 5, y)
+            ind0 = x * 10 + y * 128 + 1
+            i2c.write(ADDR, b'\x40' + screen[ind0:ind + 1])
 
     def draw_row(self, x, y, l, c=1):
         """
-
         画一横行
-
         Args:
             x (number): X 轴起始坐标 0-127
             y (number): Y 轴起始坐标 0-63
             l (number): 线段长度
             c (number): 1: 显示线段  2: 消除线段
-
         """
         d = 1 if l > 0 else -1
         for i in range(x, x + l, d):
@@ -149,15 +140,12 @@ class OLED1306(object):
 
     def draw_col(self, x, y, l, c=1):
         """
-
         画一竖列
-
         Args:
             x (number): X 轴起始坐标 0-127
             y (number): Y 轴起始坐标 0-63
             l (number): 线段长度
             c (number): 1: 显示线段  2: 消除线段
-
         """
 
         d = 1 if l > 0 else -1
@@ -168,4 +156,8 @@ class OLED1306(object):
 if __name__ == '__main__':
     display = OLED1306()
     display.set_clear()
-    display.set_text(0, 0, "hello")
+    display.set_text(0, 0, "HELLO,2021")
+    display.draw_row(10,15,10,1)
+    display.draw_row(10,25,10,1)
+    display.draw_col(10,15,10,1)
+    display.draw_col(20,15,11,1)
